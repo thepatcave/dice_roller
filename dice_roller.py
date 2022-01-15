@@ -1,8 +1,11 @@
+#!/usr/bin/env python3
+
 import random
 
+print()
 dice = ''
 while dice not in ['quit','q']:
-    print("Enter your dice roll (ex. 2d6):")
+    print("Enter your dice roll (ex. 2d6) or 'q' to quit:")
     dice = input().lower()
     print()
 
