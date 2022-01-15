@@ -1,27 +1,30 @@
 #!/usr/bin/env python3
 
 import random
+import re
 
 print()
-dice = ''
-while dice not in ['quit','q']:
-    print("Enter your dice roll (ex. 2d6) or 'q' to quit:")
-    dice = input().lower()
+dpool = ''
+while dpool not in ['quit','q']:
+    print("Enter your dice roll (ex. 2d6+1d4) or 'q' to quit:")
+    dpool = input().lower()
     print()
 
-    if dice not in ['quit','q']:
-        val = dice.split("d")
-        numDice = int(val[0])
-        valDice = int(val[1])
+    if dpool not in ['quit','q']:
+        dice = re.findall(r'\d+d\d+', dpool)
 
         rolls = []
-        for r in range(numDice):
-            roll = random.randint(1,valDice)
-            rolls.append(roll)
+        for die in dice:
+            val = die.split("d")
+            numDice = int(val[0])
+            valDice = int(val[1])
+
+            for r in range(numDice):
+                roll = random.randint(1,valDice)
+                rolls.append(roll)
             
-        print("Dice Rolled:", dice)
+        print("Dice Rolled:", dpool)
         print("Result(s):", rolls)
-        if numDice > 1:
-            print("Sum:", sum(rolls))
+        print("Sum:", sum(rolls))
         print()
 exit
