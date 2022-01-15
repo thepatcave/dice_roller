@@ -3,6 +3,7 @@ Simple dice roller for use with TTRPGs
 
 # Instructions:
 Enter your desired dice quantity and number of sides in the format: QUANTITYdSIDES
+
 Use 'q' or 'quit' to exit
   
 # Example:
