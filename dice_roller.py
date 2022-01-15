@@ -3,7 +3,7 @@ import random
 dice = ''
 while dice not in ['quit','q']:
     print("Enter your dice roll (ex. 2d6):")
-    dice = input()
+    dice = input().lower()
     print()
 
     if dice not in ['quit','q']:
