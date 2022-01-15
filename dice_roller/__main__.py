@@ -31,7 +31,7 @@ def main():
                 
             print('\n' + 'Total:' + ' {}'.format(sum(tRolls)))
             print()
+    print()
 
-main()
-print()
-exit
+if __name__ == '__main__':
+    main()
