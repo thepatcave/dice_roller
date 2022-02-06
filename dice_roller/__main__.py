@@ -12,6 +12,7 @@ def main():
 
         if valid:
             dice = re.findall(r'\d+d\d+', dPool)
+            modif = re.findall(r'\+\d+$', dPool)
 
             print('\n' + 'Dice Rolled:' + ' {}'.format(dPool))
             print('\n' + 'Result(s):')
@@ -28,7 +29,12 @@ def main():
                     rolls.append(roll)
                 print("  {} = {}; Sum = {}".format(die, rolls, sum(rolls)))
                 tRolls.append(sum(rolls))
-                
+            print("  Modifier =", modif)
+            
+            if modif:
+                modVal = re.findall(r'\d+', str(modif))
+                tRolls.append(int(modVal[0]))
+
             print('\n' + 'Total:' + ' {}'.format(sum(tRolls)))
             print()
     print()
