@@ -29,9 +29,9 @@ def main():
                     rolls.append(roll)
                 print("  {} = {}; Sum = {}".format(die, rolls, sum(rolls)))
                 tRolls.append(sum(rolls))
-            print("  Modifier =", modif)
 
             if modif:
+                print("  Modifier =", modif)
                 modVal = re.findall(r'-?\d+', str(modif))
                 tRolls.append(int(modVal[0]))
 
